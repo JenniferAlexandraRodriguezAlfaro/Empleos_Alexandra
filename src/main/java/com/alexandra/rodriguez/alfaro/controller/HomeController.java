@@ -20,7 +20,7 @@ public class HomeController {
 	
 	@GetMapping("/acerca")
 	public String acerca() {
-		return "/acerca";
+		return "acerca";
 	}
 	
 	@GetMapping("/")
@@ -31,7 +31,7 @@ public class HomeController {
 			System.out.println(v);
 		}
 		model.addAttribute("vacantes", vacantes);
-		return "/home";
+		return "home";
 	}
 	
 	@GetMapping("/mostrar")
@@ -39,6 +39,6 @@ public class HomeController {
 		Vacante vac = new  Vacante();
 		vac = serviceVacantes.buscarPorId(id);
 		model.addAttribute("vacante", vac);
-		return "/vacantes/detalleVacantes";
+		return "vacantes/detalleVacantes";
 	}
 }
